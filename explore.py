@@ -32,7 +32,7 @@ def numeric_hists(df, bins=20):
     plt.tight_layout()
     plt.show()
 
-################################################# Vanilla IQR Function ################################################# 
+################################################# Upper and Lower Bounds IQR Function ################################################# 
 
 def get_lower_and_upper_bounds(s, k): 
     'This function takes in a pandads series and a k value to return lower and upper bounds' 
@@ -41,6 +41,25 @@ def get_lower_and_upper_bounds(s, k):
     upper_bound = q3 + k * iqr
     lower_bound = q1 - k * iqr
     return upper_bound, lower_bound
+
+################################################# Upper and Lower Emperical Formula ################################################# 
+
+def sigma_outliers(df_col, sigma = 3):
+    'This Functions calculates the z-score, applies that to an upper and lower bound, and returns those values'
+    # Calculate z-score
+    zscore =abs((df_col).mean()) / (df_col.std())
+    # Calculate upper bound
+    upper_bound = (zscore * sigma) + df_col.mean()
+    # Calculate lower bound
+    lower_bound = df_col.mean() - (zscore * sigma) 
+    return upper_bound, lower_bound
+
+for col in df:
+    print(col)
+    upper_bound, lower_bound = sigma_outliers(df[col])
+    print('lower bound:', lower_bound)
+    print('upper bound:', upper_bound,"\n")
+
 
 ################################################# Hardcore Outliers and IQR As Columns #################################################
 
