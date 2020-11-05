@@ -16,6 +16,18 @@ def split_df(df):
     train, validate = train_test_split(train_validate, test_size = .3, random_state = 123)
     return train, validate, test  
 
+################################################# Computer Entropy ################################################# 
+
+def compute_entropy(series):
+    'This function computes entropy (variability) inside of a feature'
+    counts = series.value_counts()
+    if len(counts)==1:
+        ent = 0
+    else:
+        value, counts = np.unique(series, return_counts=True)
+        ent = entropy(counts, base=None)
+    return ent
+
 ################################################# Histogram Function #################################################
 
 def numeric_hists(df, bins=20):
