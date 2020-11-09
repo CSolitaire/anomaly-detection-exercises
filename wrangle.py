@@ -31,4 +31,11 @@ def wrangle_df(df):
     df = df.set_index('datetime')
     df.drop(columns=['date', 'time'], inplace = True)
     df['int_ip'] = ip_to_int(df.ip)
+    df = df.fillna(0)
+    # Add Ada to df
+    ada_list =[349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,372,375,346]
+    df['cohort_id'] = np.where((df.user_id.isin(ada_list)),30,df.cohort_id) 
+    # Add Bash to df
+    bash_list = [713,714,715,716,717,718,719,720,721,722,723,724,725,726,727,728,729,731,736,744,782]
+    df['cohort_id'] = np.where((df.user_id.isin(ada_list)),60,df.cohort_id) 
     return df
