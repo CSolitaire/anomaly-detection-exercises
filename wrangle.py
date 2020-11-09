@@ -38,6 +38,194 @@ def wrangle_df(df):
     # Add Bash to df
     bash_list = [713,714,715,716,717,718,719,720,721,722,723,724,725,726,727,728,729,731,736,744,782]
     df['cohort_id'] = np.where((df.user_id.isin(bash_list)),60,df.cohort_id) 
+    df['cohort_id_int'] = df.cohort_id.copy()
+    # Create a new column for categorical variable
+    df.cohort_id_int.astype('category')
+    
+    # Add names of all cohorts to df
+    mask = df.cohort_id_int == 1
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Arches"
+
+    mask = df.cohort_id_int == 2
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Badlands"
+
+    mask = df.cohort_id_int == 3
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Carlsbad"
+
+    mask = df.cohort_id_int == 4
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Denali"
+
+    mask = df.cohort_id_int == 5
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Everglades"
+
+    mask = df.cohort_id_int == 6
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Franklin"
+
+    mask = df.cohort_id_int == 7
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Glacier"
+
+    mask = df.cohort_id_int == 8
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Hampton"
+
+    mask = df.cohort_id_int == 9
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Apollo"
+
+    mask = df.cohort_id_int == 10
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Balboa"
+
+    mask = df.cohort_id_int == 11
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Ike"
+
+    mask = df.cohort_id_int == 12
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Joshua"
+
+    mask = df.cohort_id_int == 13
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Kings"
+
+    mask = df.cohort_id_int == 14
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Lassen"
+
+    mask = df.cohort_id_int == 15
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Mammoth"
+
+    mask = df.cohort_id_int == 16
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Niagra"
+
+    mask = df.cohort_id_int == 17
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Olympic"
+
+    mask = df.cohort_id_int == 18
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Pinnacles"
+
+    mask = df.cohort_id_int == 19
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Quincy"
+
+    mask = df.cohort_id_int == 20
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Redwood"
+
+    mask = df.cohort_id_int == 21
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Sequoia"
+
+    mask = df.cohort_id_int == 22
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Teddy"
+
+    mask = df.cohort_id_int == 23
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Ulysses"
+
+    mask = df.cohort_id_int == 24
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Voyageurs"
+
+    mask = df.cohort_id_int == 25
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Wrangell"
+
+    mask = df.cohort_id_int == 26
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Xanadu"
+
+    mask = df.cohort_id_int == 27
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Yosemite"
+
+    mask = df.cohort_id_int == 28
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Staff"
+
+    mask = df.cohort_id_int == 29
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Zion"
+
+    mask = df.cohort_id_int == 30
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Ada"
+
+    mask = df.cohort_id_int == 31
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Andromeda"
+
+    mask = df.cohort_id_int == 32
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Betelgeuse"
+
+    mask = df.cohort_id_int == 33
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Ceres"
+
+    mask = df.cohort_id_int == 34
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Bayes"
+
+    mask = df.cohort_id_int == 51
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Deimos"
+
+    mask = df.cohort_id_int == 52
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Europa"
+
+    mask = df.cohort_id_int == 53
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Fortuna"
+
+    mask = df.cohort_id_int == 55
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Curie"
+
+    mask = df.cohort_id_int == 56
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Apex"
+
+    mask = df.cohort_id_int == 57
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Ganymede"
+
+    mask = df.cohort_id_int == 58
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Hyperion"
+
+    mask = df.cohort_id_int == 59
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Darden"
+
+    mask = df.cohort_id_int == 60
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Bash"
+
+    mask = df.cohort_id_int == 61
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Io"
+
+    mask = df.cohort_id_int == 62
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Jupiter"
+
+    mask = df.cohort_id_int == 0
+    column_name = 'cohort_id_int'
+    df.loc[mask, column_name] = "Unknown"
     return df
 
 def ds_df(df):
