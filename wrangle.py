@@ -39,3 +39,61 @@ def wrangle_df(df):
     bash_list = [713,714,715,716,717,718,719,720,721,722,723,724,725,726,727,728,729,731,736,744,782]
     df['cohort_id'] = np.where((df.user_id.isin(bash_list)),60,df.cohort_id) 
     return df
+
+def ds_df(df):
+    'This function cleans the df and returns only ds cohorts'
+    ds = df
+    ds = ds[ds.cohort_id != 0]
+    ds = ds[ds.cohort_id != 1]
+    ds = ds[ds.cohort_id != 2]
+    ds = ds[ds.cohort_id != 3]
+    ds = ds[ds.cohort_id != 4]
+    ds = ds[ds.cohort_id != 5]
+    ds = ds[ds.cohort_id != 6]
+    ds = ds[ds.cohort_id != 7]
+    ds = ds[ds.cohort_id != 8]
+    ds = ds[ds.cohort_id != 9]
+    ds = ds[ds.cohort_id != 10]
+    ds = ds[ds.cohort_id != 11]
+    ds = ds[ds.cohort_id != 12]
+    ds = ds[ds.cohort_id != 13]
+    ds = ds[ds.cohort_id != 14]
+    ds = ds[ds.cohort_id != 15]
+    ds = ds[ds.cohort_id != 16]
+    ds = ds[ds.cohort_id != 17]
+    ds = ds[ds.cohort_id != 18]
+    ds = ds[ds.cohort_id != 19]
+    ds = ds[ds.cohort_id != 20]
+    ds = ds[ds.cohort_id != 21]
+    ds = ds[ds.cohort_id != 22]
+    ds = ds[ds.cohort_id != 23]
+    ds = ds[ds.cohort_id != 24]
+    ds = ds[ds.cohort_id != 25]
+    ds = ds[ds.cohort_id != 26]
+    ds = ds[ds.cohort_id != 27]
+    ds = ds[ds.cohort_id != 28] # Staff
+    ds = ds[ds.cohort_id != 29]
+    ds = ds[ds.cohort_id != 31]
+    ds = ds[ds.cohort_id != 32]
+    ds = ds[ds.cohort_id != 33]
+    ds = ds[ds.cohort_id != 51]
+    ds = ds[ds.cohort_id != 52]
+    ds = ds[ds.cohort_id != 53]
+    ds = ds[ds.cohort_id != 56]
+    ds = ds[ds.cohort_id != 57]
+    ds = ds[ds.cohort_id != 58]
+    ds = ds[ds.cohort_id != 60]
+    ds = ds[ds.cohort_id != 61]
+    ds = ds[ds.cohort_id != 62]
+    return ds
+
+def webdev_df(df):
+    'This function cleans the df and returns only wevdev cohorts'
+    #webdev df
+    webdev = df
+    webdev = webdev[webdev.cohort_id != 30]
+    webdev = webdev[webdev.cohort_id != 34]
+    webdev = webdev[webdev.cohort_id != 55]
+    webdev = webdev[webdev.cohort_id != 59]
+    webdev = webdev[webdev.cohort_id != 28] # Staff
+    return webdev
