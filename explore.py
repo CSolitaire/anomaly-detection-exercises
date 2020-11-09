@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-%matplotlib inline
 from sklearn.model_selection import train_test_split
 ################################################# Split df ################################################# 
 
@@ -66,11 +65,13 @@ def sigma_outliers(df_col, sigma = 3):
     lower_bound = df_col.mean() - (zscore * sigma) 
     return upper_bound, lower_bound
 
+"""
 for col in df:
     print(col)
     upper_bound, lower_bound = sigma_outliers(df[col])
     print('lower bound:', lower_bound)
     print('upper bound:', upper_bound,"\n")
+"""
 
 
 ################################################# Hardcore Outliers and IQR As Columns #################################################
@@ -122,3 +123,13 @@ for col in outlier_cols:
 '''
 train = train[train.columns.drop(list(train.filter(regex='_outliers')))]
 '''
+
+################################################# Chort ID Function #################################################
+
+def cohort_id(df, year, month, day, hour):
+    'This function takes in a dataframe and parameters to return a df that identifies cohort ID'
+    df = df[df.year == year]
+    df = df[df.month == month]
+    df = df[df.day == day]
+    df = df[df.hour == hour]
+    return df
