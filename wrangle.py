@@ -37,5 +37,5 @@ def wrangle_df(df):
     df['cohort_id'] = np.where((df.user_id.isin(ada_list)),30,df.cohort_id) 
     # Add Bash to df
     bash_list = [713,714,715,716,717,718,719,720,721,722,723,724,725,726,727,728,729,731,736,744,782]
-    df['cohort_id'] = np.where((df.user_id.isin(ada_list)),60,df.cohort_id) 
+    df['cohort_id'] = np.where((df.user_id.isin(bash_list)),60,df.cohort_id) 
     return df
