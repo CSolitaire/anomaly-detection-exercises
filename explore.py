@@ -133,3 +133,23 @@ def cohort_id(df, year, month, day, hour):
     df = df[df.day == day]
     df = df[df.hour == hour]
     return df
+
+################################################# Data Science Page Hit Counter Function #################################################
+
+def ds_page_hit_counter(ds):
+    ds_curriculum = pd.DataFrame({'fundimentals': [ds.page_viewed.str.contains('fundamentals').sum()],
+                              'stats': [ds.page_viewed.str.contains('stats').sum()],
+                              'sql': [ds.page_viewed.str.contains('sql').sum()],
+                              'python': [ds.page_viewed.str.contains('python').sum()],
+                              'regression': [ds.page_viewed.str.contains('regression').sum()],
+                              'classification': [ds.page_viewed.str.contains('classification').sum()],
+                              'clustering': [ds.page_viewed.str.contains('python').sum()],
+                              'time_series': [ds.page_viewed.str.contains('time').sum() | ds.page_viewed.str.contains('series').sum()],
+                              'anomoly_detection': [ds.page_viewed.str.contains('anomoly').sum() | ds.page_viewed.str.contains('detection').sum()],
+                              'natural_language': [ds.page_viewed.str.contains('nlp').sum()],
+                              'distributed_machine_learning': [ds.page_viewed.str.contains('distributed').sum()],
+                              'storytelling': [ds.page_viewed.str.contains('story').sum() | ds.page_viewed.str.contains('telling').sum()],
+                              'advanced_topics': [ds.page_viewed.str.contains('advanced').sum() | ds.page_viewed.str.contains('topics').sum()]})
+    return ds_curriculum
+
+################################################# WebDev Page Hit Counter Function #################################################
