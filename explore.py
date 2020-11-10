@@ -154,7 +154,7 @@ def ds_page_hit_counter(ds):
     return ds_curriculum
 
 ################################################# WebDev Page Hit Counter Function #################################################
-def web_page_hit_couhter(web):
+def web_page_hit_counter(web):
     'This function takes in a datafrme and tabulates the number of hits made per curriculum unit'
     web_curriculum = pd.DataFrame({'html': [web.page_viewed.str.contains('html').sum()],
                                'css': [web.page_viewed.str.contains('css').sum()],
