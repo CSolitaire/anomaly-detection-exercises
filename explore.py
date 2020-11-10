@@ -137,6 +137,7 @@ def cohort_id(df, year, month, day, hour):
 ################################################# Data Science Page Hit Counter Function #################################################
 
 def ds_page_hit_counter(ds):
+    'This function takes in a datafrme and tabulates the number of hits made per curriculum unit'
     ds_curriculum = pd.DataFrame({'fundimentals': [ds.page_viewed.str.contains('fundamentals').sum()],
                               'stats': [ds.page_viewed.str.contains('stats').sum()],
                               'sql': [ds.page_viewed.str.contains('sql').sum()],
@@ -153,3 +154,17 @@ def ds_page_hit_counter(ds):
     return ds_curriculum
 
 ################################################# WebDev Page Hit Counter Function #################################################
+def web_page_hit_couhter(web):
+    'This function takes in a datafrme and tabulates the number of hits made per curriculum unit'
+    web_curriculum = pd.DataFrame({'html': [web.page_viewed.str.contains('html').sum()],
+                               'css': [web.page_viewed.str.contains('css').sum()],
+                               'git': [web.page_viewed.str.contains('git').sum()],
+                               'javascript': [web.page_viewed.str.contains('javascript').sum()],
+                               'tdd': [web.page_viewed.str.contains('tdd').sum()],
+                               'jQuery': [web.page_viewed.str.contains('jquery').sum()],
+                               'java_i': [web.page_viewed.str.contains('java-i').sum()],
+                               'java_ii': [web.page_viewed.str.contains('java-ii').sum()],
+                               'mysql': [web.page_viewed.str.contains('sql').sum()],
+                               'java_iii': [web.page_viewed.str.contains('java-iii').sum()],
+                               'spring': [web.page_viewed.str.contains('spring').sum()]})
+    return web_curriculum
