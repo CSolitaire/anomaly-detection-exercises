@@ -168,3 +168,13 @@ def web_page_hit_counter(web):
                                'java_iii': [web.page_viewed.str.contains('java-iii').sum()],
                                'spring': [web.page_viewed.str.contains('spring').sum()]})
     return web_curriculum
+
+################################################# Page View Cohort Percent Counter #################################################
+
+def page_view_cohort(df):
+    'This function calculates the % pages viewed compared to a mean and returns those 70% less than average'
+    id_curie = df.groupby('user_id')['page_viewed'].count()
+    id_curie = pd.DataFrame(id_curie)
+    id_curie['avg'] = id_curie.page_viewed.mean()
+    id_curie['pct_difference'] = ((id_curie.page_viewed - id_curie.avg) / id_curie.avg)*100
+    return id_curie[id_curie.pct_difference < -70]
