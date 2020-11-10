@@ -279,9 +279,16 @@ def webdev_df(df):
     'This function cleans the df and returns only wevdev cohorts'
     #webdev df
     webdev = df
+    webdev = webdev[webdev.cohort_id != 0]
     webdev = webdev[webdev.cohort_id != 30]
     webdev = webdev[webdev.cohort_id != 34]
     webdev = webdev[webdev.cohort_id != 55]
     webdev = webdev[webdev.cohort_id != 59]
     webdev = webdev[webdev.cohort_id != 28] # Staff
     return webdev
+
+def unknown_df(df):
+    'This function return individuals with a cohort_id of 0'
+    unknown = df
+    unknown = unknown[unknown.cohort_id == 0]
+    return unknown
